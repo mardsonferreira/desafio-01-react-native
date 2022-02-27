@@ -66,13 +66,13 @@ export function TaskItem({
     <>
       <View>
         <TouchableOpacity
-          testID={`button-${item.id}`}
+          testID={`button`}
           activeOpacity={0.7}
           style={styles.taskButton}
           onPress={() => toggleTaskDone(item.id)}
         >
           <View
-            testID={`marker-${item.id}`}
+            testID={`marker`}
             style={item.done ? styles.taskMarkerDone : styles.taskMarker}
           >
             {item.done && <Icon name="check" size={12} color="#FFF" />}
@@ -103,6 +103,7 @@ export function TaskItem({
         <View style={styles.iconsDivider} />
 
         <TouchableOpacity
+          testID={"trash"}
           disabled={isEditing}
           onPress={() => removeTask(item.id)}
         >
